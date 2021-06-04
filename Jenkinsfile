@@ -2,6 +2,13 @@ pipeline {
   agent {
     label 'NODEJS'
   }
+  tools {
+       go 'go-1.14.2'
+  }
+
+  environment {
+        GO111MODULE = 'on'
+  }
 
   stages {
     stage('Prepare Artifacts') {
