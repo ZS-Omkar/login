@@ -3,7 +3,7 @@ pipeline {
     label 'NODEJS'
   }
   tools {
-       go 'go-1.14.2'
+       go 'go-1.14'
   }
 
   environment {
