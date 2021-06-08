@@ -1,29 +1,9 @@
-pipeline {
-  agent {
-    label 'NODEJS'
-  }
-  tools {
-       go 'go-1.14'
-  }
+@Library('todo') _
 
-  environment {
-        GO111MODULE = 'on'
-  }
-
-  stages {
-    stage('Prepare Artifacts') {
-       steps {
-       sh '''
-         zip -r ../login.zip *
-       '''
-       }
-    }
-    stage('Upload Artifacts') {
-        steps {
-            sh '''
-            curl -v -u admin:Omkar@123 --upload-file /home/ubuntu/workspace/login.zip http://172.31.4.7:8081/repository/login/login.zip
-            '''
-        }
-    }
-  }
-}
+todo(
+   COMPONENT           : 'frontend',
+   PROJECT_NAME       :  "todo",
+   SLAVE_LABEL        :  "NODEJS",
+   SKIP_NEXUS_UPLOAD  :   false,
+   APP_TYPE           :  "GO"
+)
