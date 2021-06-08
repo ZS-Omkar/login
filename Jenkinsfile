@@ -3,7 +3,7 @@
 todo(
    COMPONENT           : 'login',
    PROJECT_NAME       :  "todo",
-   SLAVE_LABEL        :  "NODEJS",
+   SLAVE_LABEL        :  "MASTER",
    SKIP_NEXUS_UPLOAD  :   false,
    APP_TYPE           :  "GO"
 )
